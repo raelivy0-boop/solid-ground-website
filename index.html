@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SolidGround Consultancy Firm</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:white;
+color:#333;
+overflow-x:hidden;
+}
+
+:root{
+--primary:#7C553C;
+--secondary:#966F4F;
+--light:#f7f3ef;
+--dark:#1f1f1f;
+}
+
+/* NAVIGATION */
+
+nav{
+width:100%;
+padding:18px 7%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+position:fixed;
+top:0;
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo img{
+width:75px;
+height:75px;
+object-fit:contain;
+}
+
+.logo-text h2{
+font-size:28px;
+color:var(--primary);
+}
+
+.logo-text p{
+font-size:17px;
+font-weight:500;
+color:var(--secondary);
+}
+
+.nav-links{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+.nav-links a{
+text-decoration:none;
+color:var(--primary);
+font-weight:600;
+font-size:15px;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:var(--secondary);
+}
+.call-btn{
+  background: #8b5e3c;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+/* HERO */
+
+.hero{
+  background:none;
+  height:500px;
+}
+
+.hero-content h1{
+font-size:70px;
+color:var(--primary);
+margin-bottom:25px;
+}
+
+.hero-content p{
+max-width:850px;
+margin:auto;
+font-size:28px;
+line-height:1.9;
+color:#E0CD67;
+text align:centre;
+}
+
+.hero-buttons{
+margin-top:40px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.hero-buttons a{
+text-decoration:none;
+padding:15px 35px;
+border-radius:40px;
+font-weight:600;
+transition:0.3s;
+}
+
+.primary-btn{
+background:var(--primary);
+color:white;
+}
+
+.secondary-btn{
+border:2px solid var(--primary);
+color:var(--primary);
+}
+
+.hero-buttons a:hover{
+transform:translateY(-5px);
+}
+
+/* GENERAL */
+
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:70px;
+}
+
+.section-title h2{
+font-size:50px;
+color:var(--primary);
+}
+
+/* CORE VALUES */
+
+.values-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
+gap:30px;
+}
+
+.value-card{
+background:var(--light);
+padding:45px 35px;
+border-radius:25px;
+transition:0.4s;
+min-height:320px;
+}
+
+.value-card:hover{
+background:var(--primary);
+color:white;
+transform:translateY(-10px);
+}
+
+.value-card h3{
+font-size:30px;
+margin-bottom:20px;
+}
+
+.value-card p{
+line-height:2;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.service-card{
+position:relative;
+height:450px;
+overflow:hidden;
+border-radius:25px;
+}
+
+.service-card img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
+}
+
+.service-card:hover img{
+transform:scale(1.1);
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to top,rgba(0,0,0,0.85),rgba(0,0,0,0.2));
+display:flex;
+flex-direction:column;
+justify-content:flex-end;
+padding:35px;
+color:white;
+}
+
+.overlay h3{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.overlay p{
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.learn-btn{
+display:inline-block;
+padding:13px 28px;
+background:white;
+color:var(--primary);
+border-radius:35px;
+text-decoration:none;
+font-weight:600;
+width:max-content;
+}
+
+/* WHY */
+
+.why{
+background:var(--light);
+}
+
+.why-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.why-box{
+background:white;
+padding:45px;
+border-radius:25px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.why-box h3{
+font-size:30px;
+margin-bottom:20px;
+color:var(--primary);
+}
+
+.why-box p{
+line-height:2;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--dark);
+padding:80px 8% 30px;
+color:white;
+}
+
+.footer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer-logo{
+width:90px;
+margin-bottom:20px;
+}
+
+footer h2{
+margin-bottom:20px;
+color:#e6d3b3;
+font-size:25px;
+}
+
+footer p,
+footer a{
+color:#D4AF37;
+line-height:2.1;
+text-decoration:none;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+  background:none;
+}
+
+.social {
+  width: 50px;
+  height: 50px;
+  background: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+}
+}
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  text-align: center;
+  width: 100%;
+  
+  margin-top: 50px;
+  padding-top: 25px;
+  
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #999;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+flex-direction:column;
+gap:20px;
+}
+
+.hero-content h1{
+font-size:45px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+.section-title h2{
+font-size:38px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="logo">
+
+<img src="logo.jpeg" alt="logo">
+
+<div class="logo-text">
+
+<h2>SolidGround Consultancy Firm</h2>
+
+<p>Professional Accounting & Bookkeeping Services</p>
+
+</div>
+
+</div>
+
+<div class="nav-links">
+
+<a href="#">Home</a>
+
+<a href="#values">Core Values</a>
+
+<a href="#services">Services</a>
+
+<a href="#why">Why Choose Us</a>
+
+<a href="tel:+254790023166" class="call-btn">Call Now</a>
+
+</div>
+
+</nav>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>SolidGround Consultancy Firm</h1>
+<br>
+<p>
+Streamlining Your Financial World
+</p>
+
+<div class="hero-buttons">
+
+<a href="tel:0790023166" class="primary-btn">
+Call Now
+</a>
+
+<a href="#services" class="secondary-btn">
+Explore Services
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CORE VALUES -->
+
+<section id="values">
+
+<div class="section-title">
+<h2>Our Core Values</h2>
+</div>
+
+<div class="values-container">
+
+<div class="value-card">
+
+<h3>Professionalism</h3>
+
+<p>
+We uphold integrity, confidentiality,
+accuracy, and excellence in all accounting
+and bookkeeping services we provide.
+</p>
+
+</div>
+
+<div class="value-card">
+
+<h3>Innovation</h3>
+
+<p>
+We embrace modern financial systems and
+innovative solutions that simplify financial
+management for businesses.
+</p>
+
+</div>
+
+<div class="value-card">
+
+<h3>Teamwork</h3>
+
+<p>
+We believe collaboration creates stronger
+financial solutions and long-term success
+for our clients.
+</p>
+
+</div>
+
+<div class="value-card">
+
+<h3>Client Focus</h3>
+
+<p>
+Our clients are at the center of everything
+we do, ensuring personalized and effective
+financial solutions.
+</p>
+
+</div>
+
+<div class="value-card">
+
+<h3>Honesty</h3>
+
+<p>
+We value transparency, trust, and ethical
+financial practices in every service
+we deliver.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="section-title">
+<h2>Our Services</h2>
+</div>
+
+<div class="services-grid">
+
+<!-- SERVICE -->
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?q=80&w=1400">
+
+<div class="overlay">
+
+<h3>Financial Record Keeping</h3>
+
+<p>
+Organized and accurate financial records
+for smooth business operations.
+</p>
+
+<a href="financial-records.html" class="learn-btn">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+<!-- SERVICE -->
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1400">
+
+<div class="overlay">
+
+<h3>Tax Compliance</h3>
+
+<p>
+Helping businesses meet tax obligations
+correctly and on time.
+</p>
+
+<a href="tax-compliance.html" class="learn-btn">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+<!-- SERVICE -->
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1400">
+
+<div class="overlay">
+
+<h3>Payroll Management</h3>
+
+<p>
+Reliable payroll solutions ensuring
+accurate employee payment management.
+</p>
+
+<a href="payroll-management.html" class="learn-btn">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+<!-- SERVICE -->
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1400">
+
+<div class="overlay">
+
+<h3>Import & Export Support</h3>
+
+<p>
+Professional support and training for
+import/export business operations.
+</p>
+
+<a href="import-export.html" class="learn-btn">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+<!-- SERVICE -->
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1554224155-1696413565d3?q=80&w=1400">
+
+<div class="overlay">
+
+<h3>Financial Reporting</h3>
+
+<p>
+Clear financial reports helping businesses
+make informed decisions.
+</p>
+
+<a href="financial-reporting.html" class="learn-btn">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+<!-- SERVICE -->
+
+<div class="service-card">
+
+<img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1400">
+
+<div class="overlay">
+
+<h3>Debt Management</h3>
+
+<p>
+Smart debt management strategies for
+improved financial stability.
+</p>
+
+<a href="debt-management.html" class="learn-btn">
+Learn More
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY CHOOSE US -->
+
+<section class="why" id="why">
+
+<div class="section-title">
+<h2>Why Choose Our Firm</h2>
+</div>
+
+<div class="why-container">
+
+<div class="why-box">
+
+<h3>Reliable Financial Solutions</h3>
+
+<p>
+We are committed to delivering reliable,
+accurate, and professional financial services
+tailored to businesses and individuals.
+</p>
+
+</div>
+
+<div class="why-box">
+
+<h3>Simplified Financial Management</h3>
+
+<p>
+We understand the financial challenges
+businesses face today, and our goal is
+to simplify financial management through
+organized systems and expert support.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<img src="logo.jpeg" class="footer-logo">
+
+<h2>SolidGround Consultancy Firm</h2>
+<br>
+<p>
+Professional Accounting & Bookkeeping Services
+</p>
+<br>
+<p>
+Helping businesses stay organized,
+compliant, and financially informed.
+</p>
+
+</div>
+
+<div>
+
+<h3>Contact Us</h3>
+
+<p>
+<a href="tel:+254790023166">📞Call Us</a>
+</p>
+
+<p>
+  💬
+  <a href="https://wa.me/254790023166" target="_blank">
+    WhatsApp Us
+  </a>
+</p>
+
+<p>
+  ✉️ 
+  <a href="mailto:solidgroundconsultancyfirm@gmail.com">Email Us</a>
+</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<p><a href="#">Home</a></p>
+
+<p><a href="#values">Core Values</a></p>
+
+<p><a href="#services">Services</a></p>
+
+<p><a href="#why">Why Choose Us</a></p>
+
+</div>
+
+<div>
+
+<h3>Follow Us</h3>
+
+<div class="socials">
+
+  
+  <a href="https://www.tiktok.com/@solidgroundconsultancy" target="_blank">TikTok</a><br>
+  
+  <a href="https://www.instagram.com/solidgroundconsultancy" target="_blank">Instagram</a><br>
+  
+  <a href="https://www.linkedin.com/in/solidground-consultancy-firm-9bb84a40b" target="_blank">LinkedIn</a><br>
+<a href="https://www.facebook.com/profile.php?id=61582954844952" target="_blank">
+  Facebook
+</a>
+  <br>
+  
+  <a href="https://www.youtube.com/@EchoesofPurpose-t9k" target="_blank">YouTube</a>
+</div>
+ </div>
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+© 2026 SolidGround Consultancy Firm.
+All Rights Reserved.
+
+</div>
+
+</footer>
+
+</body>
+</html>
